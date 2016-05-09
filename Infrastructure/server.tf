@@ -27,8 +27,9 @@ resource "digitalocean_droplet" "www-1" {
       "git clone https://github.com/cube2222/HelloWorldTerraformTest",
       # Build project
       "cd HelloWorldTerraformTest/",
-
-
+      "glide install",
+      "go build",
+      "./HelloWorldTerraformTest"
     ]
   }
 }
