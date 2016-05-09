@@ -22,12 +22,11 @@ resource "digitalocean_droplet" "www-1" {
       "sudo apt-get -y install golang",
       "export GOPATH=/root/gopath",
       "export PATH=$PATH:/root/gopath/bin",
-      "go get github.com/Masterminds/glide",
       # Download project repository
       "git clone https://github.com/cube2222/HelloWorldTerraformTest",
       # Build project
       "cd HelloWorldTerraformTest/",
-      "glide install",
+      "go get",
       "go build",
       "./HelloWorldTerraformTest"
     ]
